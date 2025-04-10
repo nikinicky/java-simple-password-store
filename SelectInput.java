@@ -20,6 +20,8 @@ public class SelectInput {
             new Label("  [" + number + "] " + options[i], width).draw();
         }
 
+        new Space(width).draw();
+
         Input input = new Input("Your choice");
         input.draw();
 

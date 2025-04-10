@@ -62,6 +62,16 @@ public class PasswordStore {
         return null;
     }
 
+    public static String formatPassword(String encryptedPassword, String savedHashkey) {
+        try {
+            return Encryptor.decrypt(encryptedPassword, savedHashkey);
+        } catch (Exception ex) {
+            Logger.getLogger(PasswordStore.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
     public void setCategory(int category) {
         if (category >= 0 || category <= 3) {
             this.category = category;
@@ -86,6 +96,11 @@ public class PasswordStore {
 
     public double getScore() {
         return this.score;
+    }
+
+    public String toStringCSVFormat() {
+        return "\"" + this.name + "\",\"" + this.username + "\",\"" + this.password + "\",\"" + this.hashkey + "\",\""
+                + this.category + "\",\"" + this.score + "\"";
     }
 
     @Override

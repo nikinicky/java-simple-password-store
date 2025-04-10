@@ -62,5 +62,6 @@ public class InputPage {
                 this.category);
 
         DataPassword.data.add(newPassword);
+        DataPassword.saveCSVData();
     }
 }

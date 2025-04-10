@@ -19,6 +19,7 @@ public class ListPasswordPage {
         this.hline = new HLine(width);
         this.space = new Space(width);
 
+        DataPassword.loadCSVData();
         this.savedPasswords = DataPassword.data;
     }
 
