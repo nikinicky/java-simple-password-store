@@ -12,7 +12,7 @@ public class Label {
 
         int spaceCount = width - 2 - text.length();
 
-        if (text.length() >= width) {
+        if (text.length() > width) {
             spaceCount = 1;
         }
 

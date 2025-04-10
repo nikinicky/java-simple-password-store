@@ -4,10 +4,10 @@ import java.util.logging.Logger;
 
 public class PasswordStore {
     public String name, username;
+    public int category;
 
     private String password, hashkey;
     private double score;
-    private int category;
 
     public static final int UNCATEGORIZED = 0;
     public static final int CAT_WEBAPP = 1;
@@ -15,15 +15,11 @@ public class PasswordStore {
     public static final int CAT_OTHER = 3;
 
     public static final String[] CATEGORIES = {
-            "Belum terkategori",
-            "Aplikasi Web",
-            "Aplikasi Mobile",
-            "Akun Lainnya"
+            "Uncategorized",
+            "Web Application",
+            "Mobile Application",
+            "Others"
     };
-
-    public PasswordStore(String name, String username, String plainPass) {
-        this(name, username, plainPass, UNCATEGORIZED);
-    }
 
     public PasswordStore(String name, String username, String plainPass, int category) {
         try {
@@ -35,6 +31,7 @@ public class PasswordStore {
         this.name = name;
         this.username = username;
 
+        this.setCategory(category);
         this.setPassword(plainPass);
     }
 

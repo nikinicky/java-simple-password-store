@@ -1,24 +1,10 @@
 public class App {
     public static void main(String[] args) {
-        testHLine();
-        testSpace();
-        testLabel();
-        testSpace();
-        testHLine();
-
-        testSpace();
-        testInput();
-
-        testSpace();
-        testSelectInput();
-
-        testSpace();
-        testHLine();
+        new MainPage("Simple Password Store App", 100).draw();
     }
 
     public static void testPasswordStore() {
-        PasswordStore userA = new PasswordStore("Raharjo Dwi", "raharjodwi22",
-                "thisissecurepassword");
+        PasswordStore userA = new PasswordStore("Raharjo Dwi", "raharjodwi22", "thisissecurepassword", 1);
 
         userA.setCategory(PasswordStore.CAT_WEBAPP);
 
@@ -29,15 +15,14 @@ public class App {
 
         System.out.println("\n");
 
-        PasswordStore userB = new PasswordStore("Fiony", "fiony41",
-                "mypassWordisStr0ng");
+        PasswordStore userB = new PasswordStore("Fiony", "fiony41", "mypassWordisStr0ng", 0);
 
         userA.setCategory(PasswordStore.CAT_MOBILEAPP);
 
         System.out.println("User B :");
         System.out.println(userB);
-        System.out.println("USERNAME: " + userB.username + " | PASSWORD: " +
-                userB.getPassword() + " | PLAIN PASSWORD: " + userB.getPlainPassword());
+        System.out.println("USERNAME: " + userB.username + " | PASSWORD: " + userB.getPassword() + " | PLAIN PASSWORD: "
+                + userB.getPlainPassword());
     }
 
     public static void testLabel() {
